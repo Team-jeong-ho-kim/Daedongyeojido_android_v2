@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Daedongyeojido_v2</string>
+    <string name="login_upper">LOGIN</string>
+    <string name="login">Login</string>
+    <string name="id">id</string>
+    <string name="pw">password</string>
 </resources>
