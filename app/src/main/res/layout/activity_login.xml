@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".feature.login.LoginActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:scaleType="fitEnd"
+            android:src="@drawable/logo_tiger"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintWidth_percent="0.7" />
+
+        <TextView
+            android:id="@+id/tv_login_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="130dp"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="@string/login_upper"
+            android:textColor="@color/main"
+            android:textSize="30sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lay_login_id"
+            style="@style/lay_edit_login"
+            android:layout_marginTop="40dp"
+            app:layout_constraintEnd_toEndOf="@id/tv_login_title"
+            app:layout_constraintStart_toStartOf="@id/tv_login_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_login_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_login_id"
+                style="@style/edit_login"
+                android:hint="@string/id"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lay_login_pw"
+            style="@style/lay_edit_login"
+            android:layout_marginTop="10dp"
+            app:layout_constraintEnd_toEndOf="@id/lay_login_id"
+            app:layout_constraintStart_toStartOf="@id/lay_login_id"
+            app:layout_constraintTop_toBottomOf="@id/lay_login_id">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/edit_login_pw"
+                style="@style/edit_login"
+                android:hint="@string/pw"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_login"
+            style="@style/btn_login"
+            android:text="@string/login"
+            android:textAllCaps="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lay_login_pw" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
