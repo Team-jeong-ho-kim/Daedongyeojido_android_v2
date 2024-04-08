@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="major">
+        <item>BackEnd</item>
+        <item>FrontEnd</item>
+        <item>Android</item>
+        <item>iOS</item>
+        <item>Flutter</item>
+        <item>Embedded</item>
+        <item>AI</item>
+        <item>Security</item>
+        <item>DevOps</item>
+        <item>Game</item>
+        <item>Design</item>
+    </string-array>
+</resources>
