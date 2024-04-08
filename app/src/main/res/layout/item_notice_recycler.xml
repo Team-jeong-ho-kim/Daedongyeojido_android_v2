@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="clubName"
+            type="String" />
+        <variable
+            name="noticeTitle"
+            type="String" />
+        <variable
+            name="noticePeriod"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/tv_notice_item_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{noticeTitle}"
+            android:fontFamily="@font/pretendard_bold"
+            android:textColor="@color/black"
+            android:textSize="20sp"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <com.google.android.flexbox.FlexboxLayout
+            android:id="@+id/lay_notice_item_major"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:flexWrap="wrap"
+            android:layout_marginStart="8dp"
+            app:layout_constraintStart_toStartOf="@id/tv_notice_item_title"
+            app:layout_constraintTop_toBottomOf="@id/tv_notice_item_title"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_notice_item_apply"
+            style="@style/btn"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:text="@string/application"
+            android:textSize="12sp"
+            android:layout_marginTop="14dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lay_notice_item_major"/>
+
+        <TextView
+            android:id="@+id/tv_notice_item_period"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{noticePeriod}"
+            android:fontFamily="@font/pretendard_regular"
+            android:textColor="@color/black50"
+            android:textSize="12sp"
+            app:layout_constraintStart_toStartOf="@id/lay_notice_item_major"
+            app:layout_constraintBottom_toBottomOf="@id/btn_notice_item_apply"/>
+
+        <View
+            style="@style/gray_line"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btn_notice_item_apply"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

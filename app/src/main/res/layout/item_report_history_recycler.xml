@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="clubName"
+            type="String" />
+        <variable
+            name="major"
+            type="String" />
+        <variable
+            name="interviewDay"
+            type="String" />
+        <variable
+            name="result"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:layout_marginTop="20dp">
+
+        <TextView
+            android:id="@+id/tv_report_history_clubname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{clubName}"
+            android:fontFamily="@font/pretendard_bold"
+            android:textSize="21sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+        <TextView
+            android:id="@+id/tv_report_history_major"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{major}"
+            android:fontFamily="@font/pretendard_regular"
+            android:textColor="@color/black50"
+            android:textSize="16sp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintTop_toTopOf="@id/tv_report_history_clubname"
+            app:layout_constraintStart_toEndOf="@id/tv_report_history_clubname"
+            app:layout_constraintBottom_toBottomOf="@id/tv_report_history_clubname"/>
+
+        <TextView
+            android:id="@+id/tv_report_history_interview"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black50"
+            android:text="@string/interview_day"
+            android:textSize="16sp"
+            android:fontFamily="@font/pretendard_regular"
+            android:layout_marginTop="8dp"
+            app:layout_constraintStart_toStartOf="@id/tv_report_history_clubname"
+            app:layout_constraintTop_toBottomOf="@id/tv_report_history_clubname"/>
+
+        <TextView
+            android:id="@+id/tv_report_history_day"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black50"
+            android:fontFamily="@font/pretendard_semibold"
+            android:text="@{interviewDay}"
+            android:textSize="16sp"
+            android:layout_marginStart="12dp"
+            app:layout_constraintStart_toEndOf="@id/tv_report_history_interview"
+            app:layout_constraintTop_toTopOf="@id/tv_report_history_interview"
+            app:layout_constraintBottom_toBottomOf="@id/tv_report_history_interview"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_regular"
+            android:textSize="16sp"
+            android:text="@{result}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

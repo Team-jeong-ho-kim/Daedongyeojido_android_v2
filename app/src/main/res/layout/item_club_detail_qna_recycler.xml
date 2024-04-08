@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+        <variable
+            name="question"
+            type="String" />
+        <variable
+            name="answer"
+            type="String" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="4dp">
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lay_club_detail_qna_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp">
+            <ImageView
+                android:id="@+id/iv_club_detail_qna_arrow"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                app:layout_constraintWidth_percent="0.04"
+                app:layout_constraintDimensionRatio="1:1.5"
+                android:src="@drawable/right_arrow"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <TextView
+                android:id="@+id/tv_club_detail_qna_question"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{question}"
+                android:fontFamily="@font/pretendard_semibold"
+                android:textSize="16sp"
+                android:layout_marginStart="30dp"
+                app:layout_constraintStart_toEndOf="@id/iv_club_detail_qna_arrow"
+                app:layout_constraintTop_toTopOf="@id/iv_club_detail_qna_arrow"/>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/tv_club_detail_qna_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_regular"
+            android:paddingEnd="20dp"
+            android:layout_marginStart="40dp"
+            android:text="@{answer}"
+            android:visibility="gone"/>
+        <View
+            style="@style/gray_line"/>
+    </LinearLayout>
+</layout>
