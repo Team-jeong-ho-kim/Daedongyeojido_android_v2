@@ -4,6 +4,10 @@
     <font
         android:font="@font/pretendard_regular"
         android:fontStyle="normal"/>
+
+    <font
+        android:font="@font/pretendard_semibold"
+        android:fontStyle="normal"/>
     
     <font
         android:font="@font/pretendard_bold"
