@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".feature.mypage.MypageFragment">
+
+    <data>
+        <variable
+            name="userName"
+            type="String" />
+        <variable
+            name="userNumber"
+            type="String" />
+        <variable
+            name="userClub"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        style="@style/lay_top_fragment">
+        <LinearLayout
+            android:id="@+id/lay_mypage_patch"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintHeight_percent="0.045"
+            android:textSize="10sp"
+            android:background="@drawable/mypage_patch_background"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:adjustViewBounds="true"
+                android:src="@drawable/logo_tiger" />
+
+            <TextView
+                android:id="@+id/tv_mypage_patch"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="8dp"
+                android:fontFamily="@font/pretendard_regular"
+                android:text="@string/patch"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_mypage_profile"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="30dp"
+            android:adjustViewBounds="true"
+            android:scaleType="fitCenter"
+            android:src="@drawable/logo"
+            app:layout_constraintDimensionRatio="1:1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lay_mypage_patch"
+            app:layout_constraintWidth_percent="0.45" />
+
+        <LinearLayout
+            android:id="@+id/lay_mypage_info"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@id/iv_mypage_profile"
+            app:layout_constraintStart_toStartOf="@id/iv_mypage_profile"
+            app:layout_constraintTop_toBottomOf="@id/iv_mypage_profile">
+
+            <androidx.constraintlayout.widget.ConstraintLayout style="@style/lay_mypage_info">
+
+                <TextView
+                    android:id="@+id/tv_mypage_name_title"
+                    style="@style/text_mypage_title"
+                    android:text="@string/name"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_name_content"
+                    style="@style/text_mypage_content"
+                    android:text="@{userName}"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_mypage_name_title"
+                    app:layout_constraintStart_toEndOf="@id/tv_mypage_name_title"
+                    app:layout_constraintTop_toTopOf="@id/tv_mypage_name_title" />
+
+                <View
+                    style="@style/view_mypage_line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_mypage_name_content" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout style="@style/lay_mypage_info">
+
+                <TextView
+                    android:id="@+id/tv_mypage_number_title"
+                    style="@style/text_mypage_title"
+                    android:text="@string/number"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_number_content"
+                    style="@style/text_mypage_content"
+                    android:text="@{userNumber}"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_mypage_number_title"
+                    app:layout_constraintStart_toEndOf="@id/tv_mypage_number_title"
+                    app:layout_constraintTop_toTopOf="@id/tv_mypage_number_title" />
+
+                <View
+                    style="@style/view_mypage_line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_mypage_number_content" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout style="@style/lay_mypage_info">
+
+                <TextView
+                    android:id="@+id/tv_mypage_club_title"
+                    style="@style/text_mypage_title"
+                    android:text="@string/club"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_mypage_club_content"
+                    style="@style/text_mypage_content"
+                    android:text="@{userClub}"
+                    android:layout_marginStart="26dp"
+                    app:layout_constraintBottom_toBottomOf="@id/tv_mypage_club_title"
+                    app:layout_constraintStart_toEndOf="@id/tv_mypage_club_title"
+                    app:layout_constraintTop_toTopOf="@id/tv_mypage_club_title" />
+
+                <View
+                    style="@style/view_mypage_line"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tv_mypage_club_content" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lay_mypage_history"
+            style="@style/lay_mypage_card"
+            app:layout_constraintStart_toStartOf="@id/lay_mypage_info"
+            app:layout_constraintTop_toBottomOf="@id/lay_mypage_info">
+
+            <ImageView
+                android:id="@+id/iv_mypage_history"
+                style="@style/img_mypage_card"
+                android:src="@drawable/mypage_club_history"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/text_mypage_card"
+                android:text="@string/mypage_club_history"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_mypage_history" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/lay_mypage_bug"
+            style="@style/lay_mypage_card"
+            app:layout_constraintEnd_toEndOf="@id/lay_mypage_info"
+            app:layout_constraintTop_toBottomOf="@id/lay_mypage_info">
+
+            <ImageView
+                android:id="@+id/iv_mypage_bug"
+                style="@style/img_mypage_card"
+                android:src="@drawable/mypage_bug"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                style="@style/text_mypage_card"
+                android:text="@string/mypage_bug"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/iv_mypage_bug" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btn_mypage_logout"
+            style="@style/btn"
+            android:layout_marginTop="20dp"
+            android:text="@string/logout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/lay_mypage_history" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
