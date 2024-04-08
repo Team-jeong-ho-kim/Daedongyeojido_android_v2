@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".feature.club.detail.ClubDetailFragment">
+    <data>
+        <variable
+            name="clubName"
+            type="String" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <ImageView
+            android:id="@+id/iv_club_detail_logo"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:src="@drawable/logo"
+            app:layout_constraintWidth_percent="0.4"
+            app:layout_constraintDimensionRatio="1:1"
+            android:layout_marginTop="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/tv_club_detail_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/pretendard_bold"
+            android:text="대동여지도"
+            android:textSize="23sp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintStart_toStartOf="@id/iv_club_detail_logo"
+            app:layout_constraintEnd_toEndOf="@id/iv_club_detail_logo"
+            app:layout_constraintTop_toBottomOf="@id/iv_club_detail_logo"/>
+
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/lay_club_detail_tab"
+            style="@style/tablayout_club_detail"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tv_club_detail_name">
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/club_explain"/>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/club_member"/>
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/club_qna"/>
+        </com.google.android.material.tabs.TabLayout>
+        <FrameLayout
+            android:id="@+id/frame_club_detail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintStart_toStartOf="@id/lay_club_detail_tab"
+            app:layout_constraintEnd_toEndOf="@id/lay_club_detail_tab"
+            app:layout_constraintTop_toBottomOf="@id/lay_club_detail_tab"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
